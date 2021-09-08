@@ -1,0 +1,16 @@
+f = open('mnist_train_partial.csv', 'r')
+mnistTP = f.readlines()
+
+mnist1 = []
+
+for i in range(len(mnist)):
+    newrow = []
+    for j in range(0, len(pixels[i]), 28):
+        newrow.append(mnist[i][1][j:j+28])
+    mnist1.append([mnist[i][0]]+[newrow])
+
+
+f.close()
+
+        
+print(mnist1)
